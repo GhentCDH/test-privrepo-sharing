@@ -10,6 +10,12 @@ RUN apt-get update && apt-get install -y git
 # Set the working directory
 WORKDIR /app
 
+RUN mkdir /root/.ssh/
+
+RUN touch /root/.ssh/known_hosts
+
+RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
+
 # Clone the repository
 RUN git clone git@github.com:GhentCDH/ugent-huisstijl-2016-bootstrap3.git .
 
@@ -18,7 +24,7 @@ RUN echo "this worked"
 # Multi-stage build
 FROM webdevops/php-apache-dev:${PHP_VERSION}
 
-# Copy files from the previous stage
+# Copy files from the previous stage (ssh key is removed)
 COPY --from=base /app /app
 
 # Set the working directory
