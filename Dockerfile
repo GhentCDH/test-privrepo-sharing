@@ -13,7 +13,7 @@ WORKDIR /app
 # Add GitHub.com to known hosts for SSH
 RUN mkdir -p /root/.ssh/ && \
     ssh-keyscan github.com >> /root/.ssh/known_hosts
-
+RUN ssh-add -l
 # Clone the repository using SSH
 # Note: The --mount=type=ssh flag should be used in the docker build command, not here
 RUN git clone git@github.com:GhentCDH/ugent-huisstijl-2016-bootstrap3.git .
