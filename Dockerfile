@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y git
 WORKDIR /app
 
 # Clone the repository
-RUN git clone https://github.com/GhentCDH/ugent-huisstijl-2016-bootstrap3.git .
+RUN git clone git@github.com:GhentCDH/ugent-huisstijl-2016-bootstrap3.git .
 
 RUN echo "this worked"
 
