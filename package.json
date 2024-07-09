@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "huisstijl2016": "git+ssh://git@github.com:GhentCDH/ugent-huisstijl-2016-bootstrap3.git",
+    "huisstijl2016": "git+ssh://git@github.com:GhentCDH/ugent-huisstijl-2016-bootstrap3.git"
   },
   "dependencies": {
     "case": "^1.6.3",
