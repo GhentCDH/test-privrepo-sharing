@@ -15,5 +15,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+      with:
+        ssh-key: ${{ secrets.UGENT_HUISSTIJL_ACCESS }}
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag test-image:$(date +%s)
+      run: docker build . --file Dockerfile --tag test-image:$(date +%s) --ssh default=${SSH_AUTH_SOCK}
