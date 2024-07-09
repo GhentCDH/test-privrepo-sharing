@@ -17,4 +17,4 @@ jobs:
       with:
         ssh-private-key: ${{ secrets.UGENT_HUISSTIJL_ACCESS }}
     - name: Build the Docker image
-      run: DOCKER_BUILDKIT=1 docker build . --file Dockerfile --ssh default=$SSH_AUTH_SOCK --tag test-image:$(date +%s) 
+      run: DOCKER_BUILDKIT=1 docker build . --file Dockerfile --ssh default=$SSH_AUTH_SOCK --tag test-image:$(date +%s) --mount=type=ssh 
