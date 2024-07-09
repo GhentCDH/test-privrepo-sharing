@@ -37,7 +37,7 @@ FROM webdevops/php-apache-dev:${PHP_VERSION}
 # Copy files from the previous stage
 COPY --from=base /app /app
 
-
+RUN --mount=type=ssh ssh-add -l
 
 # Set the working directory
 WORKDIR /app
