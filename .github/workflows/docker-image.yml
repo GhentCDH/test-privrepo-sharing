@@ -16,7 +16,5 @@ jobs:
     - uses: webfactory/ssh-agent@v0.9.0
       with:
         ssh-private-key: ${{ secrets.UGENT_HUISSTIJL_ACCESS }}
-    - name: Test SSH connectivity to GitHub
-      run: ssh -T git@github.com
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag test-image:$(date +%s) --ssh default
