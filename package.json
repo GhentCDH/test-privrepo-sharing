@@ -1,0 +1,43 @@
+{
+  "engines": {
+        "node": "=18"
+    }
+  "devDependencies": {
+    "@symfony/webpack-encore": "1.6.1",
+    "articles": "^0.2.2",
+    "axios": "^0.18.0",
+    "bootstrap-sass": "~3.3.7",
+    "ckeditor": "^4.11.3",
+    "clone": "^2.1.2",
+    "ekko-lightbox": "^5.3.0",
+    "etali": "^1.2.3",
+    "huisstijl2016": "git+ssh://git@github.com:GhentCDH/ugent-huisstijl-2016-bootstrap3.git",
+    "jquery": "^3.2.1",
+    "lodash.merge": "^4.6.2",
+    "mark.js": "^8.11.1",
+    "nouislider": "^15.6.0",
+    "pug": "^2.0.0-rc.4",
+    "pug-plain-loader": "^1.0.0",
+    "qs": "^6.6.0",
+    "regenerator-runtime": "^0.13.7",
+    "sass-loader": "^13.2.0",
+    "vue": "^2.6.8",
+    "vue-ckeditor2": "^2.1.4",
+    "vue-cookies": "^1.7.4",
+    "vue-cool-lightbox": "^2.7.4",
+    "vue-form-generator": "git+ssh://git@github.com/flamsens/vue-form-generator.git",
+    "vue-loader": "^15.7.0",
+    "vue-multiselect": "^2.1.4",
+    "vue-tables-2-premium": "^2.3.6",
+    "vue-template-compiler": "^2.6.8",
+    "vue2-dropzone": "^3.5.2",
+    "vuedraggable": "^2.19.1",
+    "wnumb": "^1.2.0",
+    "yargs": "^17.5.1"
+  },
+  "dependencies": {
+    "case": "^1.6.3",
+    "sass": "^1.58.3",
+    "webpack-shell-plugin-next": "^2.3.1"
+  }
+}
