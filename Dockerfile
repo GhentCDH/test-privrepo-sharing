@@ -12,9 +12,6 @@ WORKDIR /app
 
 COPY --link package.json ./
 
-# Add GitHub.com to known hosts for SSH
-RUN mkdir -p /root/.ssh/ && \
-    ssh-keyscan github.com >> /root/.ssh/known_hosts
 
 RUN set -eux; \
     apt-get update -qq; \
