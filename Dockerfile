@@ -38,7 +38,7 @@ FROM webdevops/php-apache-dev:${PHP_VERSION}
 
 
 COPY --from=base /app /app
-RUN echo $(ls -a ~/.ssh)
+RUN echo $(ls -a ~)
 RUN --mount=type=ssh ssh-add -l
 
 # Set the working directory
