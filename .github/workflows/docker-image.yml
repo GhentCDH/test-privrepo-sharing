@@ -8,9 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -19,4 +17,4 @@ jobs:
       with:
         ssh-private-key: ${{ secrets.UGENT_HUISSTIJL_ACCESS }}
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag test-image:$(date +%s) --ssh default=${SSH_AUTH_SOCK}
+      run: docker build . --file Dockerfile --tag test-image:$(date +%s) --ssh default
