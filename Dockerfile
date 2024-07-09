@@ -17,7 +17,7 @@ RUN touch /root/.ssh/known_hosts
 RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
 
 # Clone the repository
-RUN git clone git@github.com:GhentCDH/ugent-huisstijl-2016-bootstrap3.git .
+RUN RUN --mount=type=ssh git clone git@github.com:GhentCDH/ugent-huisstijl-2016-bootstrap3.git .
 
 RUN echo "this worked"
 
