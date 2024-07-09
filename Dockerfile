@@ -35,10 +35,10 @@ RUN --mount=type=ssh pnpm install
 FROM webdevops/php-apache-dev:${PHP_VERSION}
 
 # Copy files from the previous stage
-RUN ls -a
+
 
 COPY --from=base /app /app
-
+RUN echo $(ls -a)
 RUN --mount=type=ssh ssh-add -l
 
 # Set the working directory
