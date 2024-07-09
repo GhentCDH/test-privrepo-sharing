@@ -15,15 +15,6 @@ COPY --link package.json ./
 # Add GitHub.com to known hosts for SSH
 RUN mkdir -p /root/.ssh/ && \
     ssh-keyscan github.com >> /root/.ssh/known_hosts
-RUN --mount=type=ssh ssh-add -l
-# Clone the repository using SSH
-RUN --mount=type=ssh git clone git@github.com:GhentCDH/ugent-huisstijl-2016-bootstrap3.git .
-
-# Multi-stage build to ensure SSH keys are not included in the final image
-FROM webdevops/php-apache-dev:${PHP_VERSION}
-
-# Copy files from the previous stage
-COPY --from=base /app /app
 
 RUN set -eux; \
     apt-get update -qq; \
@@ -38,7 +29,15 @@ RUN set -eux; \
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
-RUN pnpm install
+RUN --mount=type=ssh pnpm install
+# Multi-stage build to ensure SSH keys are not included in the final image
+
+FROM webdevops/php-apache-dev:${PHP_VERSION}
+
+# Copy files from the previous stage
+COPY --from=base /app /app
+
+
 
 # Set the working directory
 WORKDIR /app
